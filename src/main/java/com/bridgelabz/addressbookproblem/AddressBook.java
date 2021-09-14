@@ -1,7 +1,26 @@
 package com.bridgelabz.addressbookproblem;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class AddressBook {
-	ArrayList <PersonContact> contactList = new ArrayList<PersonContact>();
+
+public  class AddressBook implements AddressBookIF{
+	
+	ArrayList <PersonContact> list = new ArrayList<PersonContact>();
+	public void addContact(PersonContact person) {
+		list.add(person);
+		
+	}
+	
+	@Override
+	public void displayContents() {
+		
+		Iterator<PersonContact> iterator = list.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		
+	}
+
+	
 }
